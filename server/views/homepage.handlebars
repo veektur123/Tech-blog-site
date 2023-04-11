@@ -1,7 +1,7 @@
 <div>
   <div class="post-list-wrapper">
     {{#each posts as |post|}}
-    <div class="post-wrapper">
+    <div onclick="goToPost({{post.id}})" class="post-wrapper">
       <div class="post-title-wrapper">
         <p>{{post.title}}</p>
         <p>Posted by: {{post.user_id}}</p>
@@ -13,3 +13,9 @@
     {{/each}}
   </div>
 </div>
+
+<script>
+  const goToPost = (postId) => {
+    window.location.replace(`/post/${postId}`)
+  }
+</script>

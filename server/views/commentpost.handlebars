@@ -1,0 +1,32 @@
+<div>
+  <div class="post-list-wrapper">
+    <div class="post-wrapper">
+      <div class="post-title-wrapper">
+        <p>{{post.title}}</p>
+        <p>Posted by: {{post.user_id}}</p>
+      </div>
+      <div class="post-body-wrapper">
+        <p>{{post.description}}</p>
+      </div>
+    </div>
+  </div>
+      <div class="comment-post-form">
+        <input id="comment-body" type="text">
+        <span id="comment-post-id" style="display: none;">{{post.id}}</span>
+        <button id="submit-comment-button">Submit Comment</button>
+    </div>
+    <div class="comment-list-wrapper">
+    {{#each comments as |comment|}}
+    <div class="comment-wrapper">
+      <div class="comment-title-wrapper">
+        <p>Posted by: {{comment.user_id}}</p>
+      </div>
+      <div class="comment-body-wrapper">
+        <p>{{comment.body}}</p>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
+
+<script src="/js/commentpost.js"></script>

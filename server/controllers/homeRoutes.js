@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post } = require('../models');
+const { Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 // Prevent non logged in users from viewing the homepage
@@ -59,6 +59,20 @@ router.get('/create-post', withAuth, async (req, res) => {
   try {
     res.render('createpost');
   } catch (err) {
+    res.status(500).json(err);
+  }
+})
+
+router.get('/post/:postId', withAuth, async (req, res) => {
+  try {
+    const {postId} = req.params
+    const response = await Post.findOne({where: {id: postId}})
+    const post = response.get({plain: true})
+    const commentResponse = await Comment.findAll({where: {post_id: postId}})
+    const comments = commentResponse.map((comment) => comment.get({ plain: true }));
+    res.render('commentpost', {post, comments});
+  } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 })
