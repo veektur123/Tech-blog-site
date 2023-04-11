@@ -78,7 +78,13 @@ router.post('/', async (req, res) => {
   }
   try {
     const createdUser = await User.create({name, email, password});
-    return res.json(createdUser)
+    // Create session variables based on the logged in user
+    req.session.save(() => {
+      req.session.user_id = createdUser.id;
+      req.session.logged_in = true;
+      
+     return res.json({ user: createdUser, message: 'You are now signed up!' });
+    });
   } catch (error) {
     return res.status(500).json({message: 'Error creating user'})
   }

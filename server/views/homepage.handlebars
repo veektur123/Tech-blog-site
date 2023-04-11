@@ -1,0 +1,15 @@
+<div>
+  <div class="post-list-wrapper">
+    {{#each posts as |post|}}
+    <div class="post-wrapper">
+      <div class="post-title-wrapper">
+        <p>{{post.title}}</p>
+        <p>Posted by: {{post.user_id}}</p>
+      </div>
+      <div class="post-body-wrapper">
+        <p>{{post.description}}</p>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
