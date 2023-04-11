@@ -23,7 +23,7 @@ This is a blog that allows users to view posts that others have created as well 
 npm i
 
 ### Usage Instructions
-To interact with other users in the tech community
+To interact with other users in the tech community.
 
 ### Contribution Guidelines
 N/A
