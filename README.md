@@ -41,4 +41,4 @@ This project is licensed by: MIT License
 ### Deployed Link 
 https://dashboard.heroku.com/apps/immense-garden-24076
 
-![Screen Shot 2023-04-12 at 2 17 37 AM](https://user-images.githubusercontent.com/114003376/231316761-e657977f-ca49-4b63-83bd-3fc3696d3eda.png)
+![Screen Shot 2023-04-12 at 2 30 11 AM](https://user-images.githubusercontent.com/114003376/231316979-64232a02-3751-495b-b958-8c0d0daa8c7a.png)
