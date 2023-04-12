@@ -14,6 +14,7 @@ const createCommentHandler = async (event) => {
       });
       if(response.ok){
         console.log('comment posted')
+        window.location.reload()
       }
     }
   };
